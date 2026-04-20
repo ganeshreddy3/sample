@@ -5,10 +5,7 @@ import {
   VerificationResult,
   VerificationCheck,
   ProductStatus,
-<<<<<<< HEAD
   FakeReport,
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
 } from '@/types/product';
 
 async function validateFSSAILicenseFromDB(licenseNumber: string) {
@@ -47,10 +44,7 @@ export async function verifyProduct(
       checks,
       recommendations: ['Ensure FSSAI license number (14 digits) is visible on the product label.'],
       warnings: ['FSSAI license is required for food products in India.'],
-<<<<<<< HEAD
       reportCount: 0,
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
     };
   }
 
@@ -67,7 +61,6 @@ export async function verifyProduct(
 
   const license = await validateFSSAILicenseFromDB(licenseNumber);
 
-<<<<<<< HEAD
   const { data: fakeReportsData } = await supabase
     .from('fake_reports')
     .select('*')
@@ -88,8 +81,6 @@ export async function verifyProduct(
 
   const actualReportCount = reports.length;
 
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
   if (existingProduct) {
     companyName = existingProduct.manufacturer;
     trustScore = existingProduct.trust_score ?? 0;
@@ -141,11 +132,8 @@ export async function verifyProduct(
         : ['Do not purchase. This product has been flagged or reported.'],
       warnings: status === 'genuine' ? [] : ['Verification failed or trust score reduced.'],
       companyName,
-<<<<<<< HEAD
       reportCount: actualReportCount,
       reports,
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
     };
   }
 
@@ -279,10 +267,7 @@ export async function verifyProduct(
         : ['Do not purchase. Report suspicious products.'],
     warnings: status === 'fake' ? ['FSSAI verification failed.'] : [],
     companyName,
-<<<<<<< HEAD
     reportCount: actualReportCount,
     reports,
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
   };
 }

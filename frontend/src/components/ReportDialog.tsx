@@ -28,10 +28,7 @@ export function ReportDialog({ open, onOpenChange, productName, brandName, fssai
   const { t } = useTranslation();
   const [reason, setReason] = useState('');
   const [evidence, setEvidence] = useState('');
-<<<<<<< HEAD
   const [purchaseLocation, setPurchaseLocation] = useState('');
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -57,10 +54,7 @@ export function ReportDialog({ open, onOpenChange, productName, brandName, fssai
         fssai_number: fssaiNumber,
         reason: reason,
         evidence: evidence,
-<<<<<<< HEAD
         purchase_location: purchaseLocation,
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
       });
       
       toast({
@@ -70,10 +64,7 @@ export function ReportDialog({ open, onOpenChange, productName, brandName, fssai
       
       setReason('');
       setEvidence('');
-<<<<<<< HEAD
       setPurchaseLocation('');
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
       onOpenChange(false);
     } catch (error: any) {
       toast({
@@ -148,7 +139,6 @@ export function ReportDialog({ open, onOpenChange, productName, brandName, fssai
               rows={2}
             />
           </div>
-<<<<<<< HEAD
 
           <div className="space-y-2">
             <Label htmlFor="purchaseLocation">{t('report.l_where') || 'Purchase Location (City, State, Pincode)'}</Label>
@@ -159,8 +149,6 @@ export function ReportDialog({ open, onOpenChange, productName, brandName, fssai
               onChange={(e) => setPurchaseLocation(e.target.value)}
             />
           </div>
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
         </div>
         
         <DialogFooter>

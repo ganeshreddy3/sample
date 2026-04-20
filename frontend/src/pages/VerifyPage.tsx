@@ -36,7 +36,6 @@ const VerifyPage = () => {
 
       setOcrProgress(t('verify.progress_verifying'));
       const verificationResult = await verifyProduct(details);
-<<<<<<< HEAD
       // Update product name and manufacturer from DB if found
       let detailsChanged = false;
       if (verificationResult.companyName) {
@@ -50,11 +49,7 @@ const VerifyPage = () => {
         }
       }
       if (detailsChanged) {
-=======
-      // Update product name from DB if found
-      if (verificationResult.companyName && !details.productName) {
-        details.productName = verificationResult.companyName;
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
+
         setExtractedDetails({ ...details });
       }
       setResult(verificationResult);
@@ -75,7 +70,6 @@ const VerifyPage = () => {
     try {
       setExtractedDetails(details);
       const verificationResult = await verifyProduct(details);
-<<<<<<< HEAD
       let detailsChanged = false;
       if (verificationResult.companyName) {
         if (!details.productName) {
@@ -88,10 +82,6 @@ const VerifyPage = () => {
         }
       }
       if (detailsChanged) {
-=======
-      if (verificationResult.companyName && !details.productName) {
-        details.productName = verificationResult.companyName;
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
         setExtractedDetails({ ...details });
       }
       setResult(verificationResult);

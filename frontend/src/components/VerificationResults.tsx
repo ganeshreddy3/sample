@@ -61,16 +61,11 @@ export function VerificationResults({ result, details, onReport, onReset }: Veri
           <div className="flex flex-col md:flex-row items-center gap-6">
             <TrustScore score={result.trustScore} size="lg" />
             <div className="flex-1 text-center md:text-left">
-<<<<<<< HEAD
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2 flex-wrap">
-=======
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
                 <h3 className="text-2xl font-display font-bold text-foreground">
                   {t('results.title_complete')}
                 </h3>
                 <StatusBadge status={result.status} size="lg" />
-<<<<<<< HEAD
                 {result.reportCount !== undefined && (
                   <div className={cn(
                     "flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium border",
@@ -84,8 +79,6 @@ export function VerificationResults({ result, details, onReport, onReset }: Veri
                     </span>
                   </div>
                 )}
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
               </div>
               <p className="text-muted-foreground">
                 {result.status === 'genuine' && t('results.genuine_msg')}
@@ -268,7 +261,6 @@ export function VerificationResults({ result, details, onReport, onReset }: Veri
         </CardContent>
       </Card>
 
-<<<<<<< HEAD
       {/* Reports List */}
       {result.reports && result.reports.length > 0 && (
         <Card className="border-red-200 dark:border-red-900/50">
@@ -303,18 +295,12 @@ export function VerificationResults({ result, details, onReport, onReset }: Veri
         </Card>
       )}
 
-=======
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <Button onClick={() => {
           generateCertificate({
             productName: details.productName || '',
-<<<<<<< HEAD
             manufacturer: details.manufacturer || '',
-=======
-            manufacturer: details.manufacturer || details.brandName || '',
->>>>>>> 12933d4a2c9fe474fbaf63f144669acb7d5ef888
             licenseNumber: details.licenseNumber || '',
             trustScore: result.trustScore,
             status: result.status,
